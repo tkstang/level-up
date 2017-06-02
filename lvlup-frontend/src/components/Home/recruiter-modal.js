@@ -9,7 +9,7 @@ const RecruiterModal = () => (
     <Modal.Content image>
       <Image wrapped size="large" src={require('../../images/logo.png')} />
       <Modal.Description className="demo-modal">
-        <Header>Welcome Recruiters, Employers, Instuctors and Curious Developers!</Header>
+        <Header>Welcome Recruiters, Employers, Instructors and Curious Developers!</Header>
         <div className="modalRecruiter">
           <div className="modalGreeting">Thank you for visiting lvl^! This Full-Stack web application was created as the Galvanize Web Development Immersive capstone project by three students of the g42 cohort:</div>
 
