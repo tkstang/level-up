@@ -50,16 +50,20 @@ export const submissions = (state = { submissions: [] }, action) => {
 };
 
 
-export const challenges = (state = { challenges: [] }, action) => {
+export const challenges = (state = { challenges: [], fetched: false }, action) => {
   switch (action.type) {
     case CONST.CHALLENGES_CAMPUS_FULFILLED:
       return Object.assign({}, state, {
         challenges: state.challenges.concat(action.payload),
+        fetched: true,
       });
     case CONST.CHALLENGES_CAMPUS_REJECTED:
       return Object.assign({}, { error: 'Server Error - Please Try Again' }, state);
     case CONST.RESET_CHALLENGE_ADMIN:
-      return Object.assign({}, { challenges: [] });
+      return Object.assign({}, {
+        challenges: [],
+        fetched: false,
+      });
     default:
       return state;
   }

@@ -27,7 +27,7 @@ const connectToStore = connect(mapStateToProps, mapDispatchToProps);
 
 const onDidMount = lifecycle({
   componentDidMount() {
-    this.props.campusChallenges(this.props.adminInfo.campus_id);
+    if (!this.props.challenges.fetched) return this.props.campusChallenges(this.props.adminInfo.campus_id);
     this.props.resetEditChallenge();
     this.props.resetAddChallenge();
   },
