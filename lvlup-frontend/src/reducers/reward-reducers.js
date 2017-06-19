@@ -108,7 +108,7 @@ export const rewards = (state = { rewards: [], fetched: false }, action) => {
   switch (action.type) {
     case CONST.REWARDS_CAMPUS_FULFILLED:
       return Object.assign({}, state, {
-        rewards: state.rewards.concat(action.payload),
+        rewards: action.payload,
         fetched: true,
       });
     case CONST.RESET_AFTER_ADDED_REWARD_FULFILLED:
