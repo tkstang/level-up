@@ -11,7 +11,7 @@ export const bubbleSortStudent = (arr) => {
   while (!done) {
     done = true;
     for (let i = 1; i < arr.length; i++) {
-      if (arr[i - 1].student.name > arr[i].student.name) {
+      if (arr[i - 1].student.name.toLowerCase() > arr[i].student.name.toLowerCase()) {
         done = false;
         swap(arr, i - 1, i);
       }
@@ -25,6 +25,19 @@ export const selectionSort = (arr, key) => {
     let min = i;
     for (let j = i + 1; j < arr.length; j++) {
       if (arr[j][key] < arr[min][key]) {
+        min = j;
+      }
+    }
+    swap(arr, i, min);
+  }
+  return arr;
+};
+
+export const selectionSortTitle = (arr, key) => {
+  for (let i = 0; i < arr.length; i++) {
+    let min = i;
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[j][key].toLowerCase() < arr[min][key].toLowerCase()) {
         min = j;
       }
     }

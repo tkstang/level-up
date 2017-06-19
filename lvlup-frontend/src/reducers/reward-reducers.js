@@ -3,7 +3,7 @@ import {
   mergeSort,
   quickSort,
 } from '../helpers/sort-date';
-import { selectionSort, insertionSortPointsReward } from '../helpers/sort';
+import { selectionSort, insertionSortPointsReward, selectionSortTitle } from '../helpers/sort';
 import reverse from '../helpers/reverse';
 
 export const addedReward = (state = { fulfilled: false }, action) => {
@@ -120,7 +120,7 @@ export const rewards = (state = { rewards: [], fetched: false }, action) => {
       return Object.assign({}, { rewards: [] });
     case CONST.SORT_REWARD_TITLE:
       return Object.assign({}, state, {
-        rewards: selectionSort(state.rewards, 'name'),
+        rewards: selectionSortTitle(state.rewards, 'name'),
       });
     case CONST.SORT_REWARD_CATEGORY:
       return Object.assign({}, state, {
@@ -132,7 +132,7 @@ export const rewards = (state = { rewards: [], fetched: false }, action) => {
       });
     case CONST.SORT_REWARD_TITLE_REVERSE:
       return Object.assign({}, state, {
-        rewards: reverse(selectionSort(state.rewards, 'name')),
+        rewards: reverse(selectionSortTitle(state.rewards, 'name')),
       });
     case CONST.SORT_REWARD_CATEGORY_REVERSE:
       return Object.assign({}, state, {
