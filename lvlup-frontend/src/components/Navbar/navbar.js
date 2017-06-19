@@ -8,30 +8,33 @@ import LogOutGithub from './logout-student-container';
 import LogOutAdmin from './logout-admin-container';
 
 const NavBar = props => (
-  <Menu secondary size="small" className="nav">
-    <Menu.Item className="center" header>
-      {renderIf(!props.studentLoginInfo.status && !props.adminLoginInfo.status)(
-        <Link to={'/'}><div className="nav-logo">lvl^</div></Link>,
+  <div>
+    {renderIf(!props.studentLoginInfo.status && !props.adminLoginInfo.status)(
+      <Menu secondary size="small" className="nav">
+        <Menu.Item className="center" header>
+          {renderIf(!props.studentLoginInfo.status && !props.adminLoginInfo.status)(
+            <Link to={'/'}><div className="nav-logo">lvl^</div></Link>,
       )}
-      {renderIf(props.studentLoginInfo.status)(
-        <Link to={'/student/dashboard'}><div className="nav-logo">lvl^</div></Link>,
+          {renderIf(props.studentLoginInfo.status)(
+            <Link to={'/student/dashboard'}><div className="nav-logo">lvl^</div></Link>,
       )}
-      {renderIf(props.adminLoginInfo.status)(
-        <Link to={'/admin/dashboard'}><div className="nav-logo">lvl^</div></Link>,
+          {renderIf(props.adminLoginInfo.status)(
+            <Link to={'/admin/dashboard'}><div className="nav-logo">lvl^</div></Link>,
       )}
-    </Menu.Item>
-    <Menu.Item className="right">
-      {renderIf(!props.studentLoginInfo.status && !props.adminLoginInfo.status)(
-        <LoginModal />,
+        </Menu.Item>
+        <Menu.Item className="right">
+          {renderIf(!props.studentLoginInfo.status && !props.adminLoginInfo.status)(
+            <LoginModal />,
       )}
-      {renderIf(props.studentLoginInfo.status)(
-        <LogOutGithub />,
+          {renderIf(props.studentLoginInfo.status)(
+            <LogOutGithub />,
       )}
-      {renderIf(props.adminLoginInfo.status)(
-        <LogOutAdmin />,
+          {renderIf(props.adminLoginInfo.status)(
+            <LogOutAdmin />,
       )}
-    </Menu.Item>
-  </Menu>
+        </Menu.Item>
+      </Menu>)}
+  </div>
 );
 
 export default NavBar;
