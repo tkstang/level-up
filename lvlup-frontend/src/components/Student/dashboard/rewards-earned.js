@@ -3,7 +3,7 @@ import { Table, Loader, Dropdown } from 'semantic-ui-react';
 import renderRewardsEarned from '../helpers/render-rewards-earned';
 
 const RewardsEarned = (props) => {
-  if (props.requests.length === 0) {
+  if (props.requests.fetched === false) {
     return <Loader active inline="centered"> Loading </Loader>;
   }
   return (

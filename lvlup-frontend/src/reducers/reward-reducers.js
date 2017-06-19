@@ -78,11 +78,12 @@ export const requestedReward = (state = { fulfilled: false }, action) => {
   }
 };
 
-export const requests = (state = { requests: [] }, action) => {
+export const requests = (state = { requests: [], fetched: false }, action) => {
   switch (action.type) {
     case CONST.REQUESTS_FULFILLED:
       return Object.assign({}, state, {
-        requests: state.requests.concat(action.payload),
+        requests: action.payload,
+        fetched: true,
       });
     case CONST.REQUESTS_REJECTED:
       return Object.assign({}, { error: 'Server Error - Please Try Again' }, state);

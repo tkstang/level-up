@@ -58,7 +58,7 @@ router.route('/student/login')
     });
   })
   .put((req, res) => {
-    Student.forge({ email: req.session.passport.user._json.email })
+    Student.forge({ github_id: Number(req.session.passport.user.id) })
     .fetch()
     .then(student => student.save({
       student_id: student.get('student_id'),
@@ -66,6 +66,7 @@ router.route('/student/login')
       email: student.get('email'),
       github_user_name: student.get('github_user_name'),
       photo_url: student.get('photo_url'),
+      github_id: student.get('github_id'),
       username: req.body.username,
       cohort_id: req.body.cohort_id,
     }))
