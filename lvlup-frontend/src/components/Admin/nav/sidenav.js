@@ -17,9 +17,9 @@ const AdminSidenav = (props) => {
         </div>
       </Menu.Item>
       <Link to={'/admin/dashboard'}><Menu.Item><Icon className="dash-icon" name="dashboard" /><br />Dashboard</Menu.Item></Link>
-      <Link to={'/admin/challenges'}><Menu.Item><Icon name="chevron up" /><br />Challenges</Menu.Item></Link>
-      <Link to={'/admin/rewards'}><Menu.Item><Icon name="gift" /><br />Rewards</Menu.Item></Link>
-      <Link to={'/admin/configuration'}><Menu.Item><Icon name="setting" /><br />Configuration</Menu.Item></Link>
+      <Link to={'/admin/challenges'}><Menu.Item><Icon className="dash-icon" name="chevron up" /><br />Challenges</Menu.Item></Link>
+      <Link to={'/admin/rewards'}><Menu.Item><Icon className="dash-icon" name="gift" /><br />Rewards</Menu.Item></Link>
+      <Link to={'/admin/configuration'}><Menu.Item><Icon className="dash-icon" name="setting" /><br />Configuration</Menu.Item></Link>
     </Menu>
   );
 };
