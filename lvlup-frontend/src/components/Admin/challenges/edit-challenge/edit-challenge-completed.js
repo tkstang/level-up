@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import './edit-challenge-styles.css';
 
 const EditChallengeCompleted = props => (
-  <Container className="lvl-table">
+  <Container>
     <Table celled selectable color="orange">
       <Table.Header>
         <Table.Row>
