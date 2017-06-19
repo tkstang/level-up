@@ -6,7 +6,6 @@ const Submissions = (props) => {
   if (props.submissions.length === 0) {
     return <Loader active inline="centered"> Loading </Loader>;
   }
-  console.log(props.submissions);
   return (
     <Table celled selectable id="submissions-table">
       <Table.Header>

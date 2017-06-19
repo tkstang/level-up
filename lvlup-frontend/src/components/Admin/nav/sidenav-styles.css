@@ -28,6 +28,14 @@ h4 {
 
 .dash-icon {
   text-align: center !important;
-  float: center !important;
   margin-bottom: 10px !important;
+}
+
+
+.ui.vertical.menu .item>i.icon {
+  float: center !important;
+}
+
+.ui.menu .item {
+  float: center !important;
 }

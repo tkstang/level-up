@@ -5,12 +5,18 @@ import RecruiterModal from './recruiter-modal';
 import Technologies from './technologies';
 import Team from './team';
 import About from './about';
+import NavBar from '../Navbar/navbar-container';
 import './homeview.css';
 
 const Home = () => (
   <div>
     <Grid>
-      <Grid.Row centered width={16}>
+      <Grid.Row id="landing-nav-row">
+        <Grid.Column width={16} id="landing-nav-col">
+          <NavBar />
+        </Grid.Column>
+      </Grid.Row>
+      <Grid.Row centered width={16} id="logo-row">
         <h1 className="home-header">live.work.grow.lvl^</h1>
       </Grid.Row>
     </Grid>
@@ -52,8 +58,8 @@ const Home = () => (
           <RecruiterModal />
         </div>
       </Grid.Row>
+      <Footer />
     </Grid>
-    <Footer />
   </div>
 );
 

@@ -8,8 +8,8 @@ import LogOutGithub from './logout-student-container';
 import LogOutAdmin from './logout-admin-container';
 
 const NavBar = props => (
-  <Menu secondary size="small" className="nav">
-    <Menu.Item className="center" header>
+  <div className="nav">
+    <div id="nav-logo">
       {renderIf(!props.studentLoginInfo.status && !props.adminLoginInfo.status)(
         <Link to={'/'}><div className="nav-logo">lvl^</div></Link>,
       )}
@@ -19,19 +19,13 @@ const NavBar = props => (
       {renderIf(props.adminLoginInfo.status)(
         <Link to={'/admin/dashboard'}><div className="nav-logo">lvl^</div></Link>,
       )}
-    </Menu.Item>
-    <Menu.Item className="right">
+    </div>
+    <div id="nav-login">
       {renderIf(!props.studentLoginInfo.status && !props.adminLoginInfo.status)(
         <LoginModal />,
       )}
-      {renderIf(props.studentLoginInfo.status)(
-        <LogOutGithub />,
-      )}
-      {renderIf(props.adminLoginInfo.status)(
-        <LogOutAdmin />,
-      )}
-    </Menu.Item>
-  </Menu>
+    </div>
+  </div>
 );
 
 export default NavBar;

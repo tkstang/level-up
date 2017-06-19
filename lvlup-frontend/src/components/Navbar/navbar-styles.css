@@ -3,3 +3,33 @@
   color: #F2711C !important;
   font-size: 20px;
 }
+
+.nav {
+  height: 60px;
+  border-bottom: solid 1px #F2711C !important;
+  background-color: #4A4A4A !important;
+  width: 100%;
+  height: 60px;
+  color: white;
+  padding-top: 18px;
+  padding-left: 24px;
+  padding-right: 16px;
+  border-radius: 0% !important;
+  border-bottom: 1px solid;
+  border-top: 1px solid;
+  border-color: #F2711C;
+  color: #F2711C;
+  font-family: 'Anaheim', sans-serif;
+  font-size: 18px;
+}
+
+#nav-login {
+  float: right;
+  padding-right: 4px;
+}
+
+#nav-logo {
+  float: left;
+  padding-left: 2px;
+  padding-top: 8px;
+}

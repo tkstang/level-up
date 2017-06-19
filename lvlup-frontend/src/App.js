@@ -36,11 +36,6 @@ export default class App extends Component {
         <Router>
           <div id="app-div">
             <Grid id="app-grid">
-              <Grid.Row id="nav-row">
-                <Grid.Column id="nav-col" width={16}>
-                  <NavBar />
-                </Grid.Column>
-              </Grid.Row>
               <Grid.Row id="main-row">
                 <Grid.Column id="user-col" width={16}>
                   <Route exact path="/" component={Home} />
@@ -53,7 +48,6 @@ export default class App extends Component {
                     </Grid.Column>
                     <div id="nav-pad">
                       <Grid.Column centered id="content-col" width={12}>
-
                         <Route exact path="/student/dashboard" component={StudentDashboard} />
                         <Route exact path="/student/challenges" component={StudentChallenges} />
                         <Route path="/student/challenge-submission/:id" component={SubmissionMain} />

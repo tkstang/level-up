@@ -120,7 +120,7 @@ div.description {
 .footer {
   text-align: center;
   background-color: #4A4A4A !important;
-  position: absolute;
+  /*position: absolute !important;*/
   bottom: 0;
   width: 100%;
   height: 46px;
@@ -180,6 +180,19 @@ div.description {
 
 #intro-row {
   background-color: white;
+}
+
+#landing-nav-col {
+  padding: 0px;
+}
+
+#landing-nav-row {
+  padding-bottom: 0px;
+  background-color: #4A4A4A !important;
+}
+
+#logo-row {
+  padding-top: 0px;
 }
 
 .modalGreeting {
