@@ -117,7 +117,7 @@ export const submissions = (state = { submissions: [] }, action) => {
     case CONST.SORT_SUBMISSIONS_REV_CHRONO:
       return { ...state, submissions: reverse(quickSort(state.submissions)) };
     case CONST.SORT_SUBMISSIONS_ASC:
-      return { ...state, submissions: insertionSortPointsChal(state.submissions) };
+      return { ...state, submissions: [...insertionSortPointsChal(state.submissions)] };
     case CONST.SORT_SUBMISSIONS_DESC:
       return { ...state, submissions: reverse(insertionSortPointsChal(state.submissions)) };
     default:

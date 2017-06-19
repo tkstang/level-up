@@ -91,7 +91,7 @@ export const requests = (state = { requests: [] }, action) => {
     case CONST.SORT_REQUESTS_REV_CHRONO:
       return { ...state, requests: quickSort(state.requests) };
     case CONST.SORT_REWARDS_ASC:
-      return { ...state, requests: insertionSortPointsReward(state.requests) };
+      return { ...state, requests: [...insertionSortPointsReward(state.requests)] };
     case CONST.SORT_REWARDS_DESC:
       return { ...state, requests: reverse(insertionSortPointsReward(state.requests)) };
     case CONST.SORT_REWARDS_CHRONO:
