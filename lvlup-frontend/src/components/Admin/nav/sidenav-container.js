@@ -2,12 +2,14 @@ import { compose, lifecycle } from 'recompose';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import AdminSidenav from './sidenav';
+import { loggingOutAdmin } from '../../../actions/navbar';
 import { submissionsAction, requestsAction } from '../../../actions/admin-dash-actions';
 import { resetAdmin } from '../../../actions/admin-config';
 
 export const mapDispatchToProps = dispatch => bindActionCreators({
   submissionsAction,
   requestsAction,
+  loggingOutAdmin,
   resetAdmin,
 }, dispatch);
 
