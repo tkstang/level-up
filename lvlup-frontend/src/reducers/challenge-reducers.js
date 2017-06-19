@@ -3,7 +3,7 @@ import {
   mergeSort,
   quickSort,
 } from '../helpers/sort-date';
-import { selectionSort, insertionSortPointsChal } from '../helpers/sort';
+import { selectionSort, insertionSortPointsChal, selectionSortTitle } from '../helpers/sort';
 import reverse from '../helpers/reverse';
 
 export const addedChallenge = (state = { fulfilled: false }, action) => {
@@ -40,7 +40,7 @@ export const challenges = (state = { challenges: [], fetched: false }, action) =
       });
     case CONST.SORT_CHALLENGE_TITLE:
       return Object.assign({}, state, {
-        challenges: selectionSort(state.challenges, 'name'),
+        challenges: selectionSortTitle(state.challenges, 'name'),
       });
     case CONST.SORT_CHALLENGE_CATEGORY:
       return Object.assign({}, state, {
@@ -52,7 +52,7 @@ export const challenges = (state = { challenges: [], fetched: false }, action) =
       });
     case CONST.SORT_CHALLENGE_TITLE_REVERSE:
       return Object.assign({}, state, {
-        challenges: reverse(selectionSort(state.challenges, 'name')),
+        challenges: reverse(selectionSortTitle(state.challenges, 'name')),
       });
     case CONST.SORT_CHALLENGE_CATEGORY_REVERSE:
       return Object.assign({}, state, {
