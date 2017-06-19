@@ -7,7 +7,7 @@ const Submissions = (props) => {
     return <Loader active inline="centered"> Loading </Loader>;
   }
   return (
-    <Table celled selectable>
+    <Table celled selectable id="submissions-table">
       <Table.Header>
         <Table.Row>
           <Table.HeaderCell className="thead-sortable" textAlign="center" colSpan="4">Current Submissions
