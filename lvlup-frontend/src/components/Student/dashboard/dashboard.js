@@ -26,7 +26,7 @@ const StudentDashboard = (props) => {
     <div className="lvl-table">
       <h1 className="headerStudent">{`Welcome, ${getFirstName(props.studentLoginInfo.name)}!`}</h1>
       { props.submissions.submissions.length > 0 ? <AchievementsCarousel /> : null}
-      <Table celled selectable>
+      <Table celled selectable id="points-table">
         <Table.Header>
           <Table.Row>
             <Table.HeaderCell textAlign="center" className="thead-secondary">Current Quarter</Table.HeaderCell>

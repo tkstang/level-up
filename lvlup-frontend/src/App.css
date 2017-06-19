@@ -175,6 +175,10 @@ h2 {
   float: center !important;
  }
 
+ .ui.vertical.menu .item>i.icon {
+   /*float: center !important;*/
+ }
+
  #user-col {
    min-height: 100% !important;
    height: 100% !important;

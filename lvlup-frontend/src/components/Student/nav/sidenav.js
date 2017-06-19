@@ -18,9 +18,9 @@ const StudentSidenav = (props) => {
           <p>{props.studentPointsAndCampus.cohort ? `${props.studentPointsAndCampus.cohort}  ${props.studentPointsAndCampus.cohortType} -  ${props.studentPointsAndCampus.location}` : null}</p>
         </div>
       </Menu.Item>
-      <Link to={'/student/dashboard'}><Menu.Item><Icon name="dashboard" />Dashboard</Menu.Item></Link>
-      <Link to={'/student/challenges'}><Menu.Item><Icon name="chevron up" />Challenges</Menu.Item></Link>
-      <Link to={'/student/rewards'}><Menu.Item><Icon name="gift" />Rewards</Menu.Item></Link>
+      <Link to={'/student/dashboard'}><Menu.Item><Icon className="dash-icon" name="dashboard" />Dashboard</Menu.Item></Link>
+      <Link to={'/student/challenges'}><Menu.Item><Icon className="dash-icon" name="chevron up" />Challenges</Menu.Item></Link>
+      <Link to={'/student/rewards'}><Menu.Item><Icon className="dash-icon" name="gift" />Rewards</Menu.Item></Link>
     </Menu>
   );
 };

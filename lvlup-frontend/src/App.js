@@ -29,6 +29,10 @@ import {
   Route,
 } from 'react-router-dom';
 
+const mapStateToProps = state => ({
+  submissions: state.submissions.submissions,
+});
+
 export default class App extends Component {
   render() {
     return (

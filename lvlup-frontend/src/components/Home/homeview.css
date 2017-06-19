@@ -39,9 +39,8 @@
 }
 
 .about-reveal {
-  padding: 10px;
   font-family: 'Anaheim', sans-serif;
-  font-size: 1.0em;
+  font-size: 1.2em;
   line-height: 24px;
 }
 
@@ -136,6 +135,14 @@ div.description {
   font-size: 18px;
 }
 
+.footer a {
+  color: #F2711C;
+}
+
+.footer a:hover {
+  cursor: pointer;
+}
+
 .hamburger {
   color: #F2711C;
   font-weight: 100 !important;
@@ -222,17 +229,12 @@ div.description {
 
 .team-cards {
   background-color: #4A4A4A;
-  padding: 60px 40px 140px 40px;
+  padding: 50px 40px 140px 40px;
 }
 
 .team-card {
   max-width: 440px !important;
   min-width: 440px !important;
-}
-
-.team-image {
-  /*height: 400px !important;
-  width: 400px !important;*/
 }
 
 .technologyCards {
