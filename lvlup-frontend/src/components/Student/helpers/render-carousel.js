@@ -5,13 +5,13 @@ import '../dashboard/dashboard-styles.css';
 
 const renderCarousel = props => (
   props.submissions.filter(submission => submission.submission_status === 'Approved').map(item => (
-    <Card key={`${item.id}student-dashboard3`}>
+    <Card className="achievement-card" key={`${item.id}student-dashboard3`}>
       <Card.Content>
         <Card.Header>
           {item.challenge.name}
         </Card.Header>
         <Card.Meta>
-          <span className="date">
+          <span className="date orange-font">
             Points: {item.challenge.point_value}
           </span>
         </Card.Meta>
@@ -19,7 +19,7 @@ const renderCarousel = props => (
           <p><b>Description: </b> {item.challenge.description}</p>
           <p><b>Submission Details: </b> {item.submission_message}</p>
           <p><b>Evaluation: </b> {item.evaluation_message ? item.evaluation_message : 'No Evaluation Available'} </p>
-          <p><b>Date Achieved: </b> {formatDate(item.created_at)} </p>
+          <p><b>Date Achieved: </b> <div className="orange-font">{formatDate(item.created_at)}</div> </p>
         </Card.Description>
       </Card.Content>
     </Card>

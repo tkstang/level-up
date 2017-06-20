@@ -35,7 +35,7 @@ const RecruiterModal = () => (
             Before you continue to the landing page to read all about the project, <strong>please first read this important message in order to be able to demo the application.</strong> As this application was created specifically for use by students and administrators of Galvanize immersive programs, we have taken steps to ensure that potential recruiters and employers as well as other curious developers interested in the project would be able to create accounts and demo the application.  First and foremost we created a demo version of the app so users can play around with the application without impacting the live version used by students and administrators.  Our demo version allows you to explore as both a student and an administrator...</p>
 
             <p>
-              <strong><u>To Demo as a Student:</u></strong>  Our app uses GitHub OAuth for student authorization.  If you have an existing GitHub Account you can simply sign up as a student.  If you do not have a GitHub account please fill out the E-mail field below and we will send you an E-mail with the credentials to log in to our demo account.  If using your own existing GitHub to sign up as a student when you log in for the first time please <b>select g42 as your cohort</b>.
+              <strong><u>To Demo as a Student:</u></strong>  Our app uses GitHub OAuth for student authorization.  If you have an existing GitHub Account you can simply sign up as a student.  If you do not have a GitHub account please fill out the E-mail field below and we will send you an E-mail with the credentials to log in to our demo account.  If using your own existing GitHub account to sign up as a student please <b>select g42 as your cohort</b>.
           </p>
 
             <p>
@@ -57,8 +57,8 @@ const RecruiterModal = () => (
               <li>View all pending reward requests</li>
               <li>Approve or deny challenge submissions</li>
               <li>Approve of deny reward requests</li>
-              <li>Add or edit challenges </li>
-              <li>Add or edit rewards</li>
+              <li>Add, edit or delete challenges </li>
+              <li>Add, edit or delete rewards</li>
             </ul>
           </div>
           <p> Please note that we will be rolling back and re-seeding our database every so often to reset and re-seed.</p>

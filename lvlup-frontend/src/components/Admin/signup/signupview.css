@@ -4,10 +4,11 @@
 
 .forms {
   margin-top: 20px;
+  width: 100%;
+
 }
 
 .signup {
   text-align: center;
-  width: 50%;
-  margin-left: 25%
+  width: 40%;
 }

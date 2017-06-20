@@ -83,14 +83,14 @@
 
 .description {
   margin-top: 50px;
-  width: 80%;
+  /*width: 80%;*/
   margin-bottom: 80px;
   text-align: center;
 }
 
 .demo-modal {
   margin-top: 50px;
-  width: 50%;
+  /*width: 100% !important;*/
   margin-left: 0%;
   margin-right: 10%;
   text-align: center;

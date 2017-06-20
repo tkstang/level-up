@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { compose, lifecycle } from 'recompose';
 import { signup, allCohorts, allCampuses, setCohorts, setCampuses } from '../../../actions/admin-signup';
-import SignupForm from './email';
+import SignupForm from './signup-form';
 
 const mapDispatchToProps = dispatch => bindActionCreators({
   signup,

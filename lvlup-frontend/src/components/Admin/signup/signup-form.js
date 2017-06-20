@@ -95,7 +95,7 @@ const SignupForm = (props) => {
           { props.cohorts.map(option => <option value={option.id}>{option.name}</option>)}
         </Field>
       </Form.Field>
-      <Button content="Sign Up" />
+      <Button basic color="orange" content="Sign Up" />
     </Form>
   );
 };

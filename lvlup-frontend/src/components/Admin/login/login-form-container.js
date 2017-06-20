@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { reduxForm } from 'redux-form';
 import { compose } from 'recompose';
 import { login } from '../../../actions/admin-login';
-import LoginForm from './email';
+import LoginForm from './login-form';
 
 const mapDispatchToProps = dispatch => bindActionCreators({ login }, dispatch);
 
