@@ -15,6 +15,12 @@ router.route('/admins/')
   });
 
 router.route('/admins/:id')
+  .get((req, res) => {
+    Admin.forge({ id: req.params.id })
+    .fetch({ withRelated: ['cohorts.campus'] })
+    .then(admin => res.status(200).json(admin));
+  })
+
   .put((req, res) => {
     Admin.forge({ id: req.params.id })
     .fetch()
@@ -53,10 +59,10 @@ router.route('/admins/:id/cohorts')
     .then((adminsCohorts) => {
       const cohortsList = adminsCohorts.models.map(ele => ele.relations.cohort.attributes.name);
       res.status(200).json(cohortsList);
+    })
+    .catch((err) => {
+      console.log(err);
     });
-    // .catch((err) => {
-    //   console.log(err);
-    // });
   });
 
 module.exports = router;

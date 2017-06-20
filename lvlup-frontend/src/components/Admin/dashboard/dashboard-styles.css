@@ -1,10 +1,6 @@
 .lvl-table {
   text-align: center;
-  float: center;
-  margin-left: 210px;
-  margin-top: 30px;
   margin-bottom: 30px;
-  padding: 20px;
   overflow-y: scroll;
 }
 
@@ -15,10 +11,23 @@
   margin-top: 30px;
 }
 
-.subsequent-table {
+#requests-table {
   margin-top: 20px;
+  margin-bottom: 60px;
 }
 
 #hover-icon:hover {
   cursor: pointer;
+}
+
+.table-cell {
+  background-color: rgba(255, 153, 0, 0.05) !important;
+}
+
+.table {
+  background-color: #ffffff !important;
+}
+
+#submissions-table {
+  margin-bottom: 60px;
 }

@@ -25,6 +25,7 @@ router.route('/auth/github')
 router.route('/auth/github/callback')
   .get(passport.authenticate('github'),
   (req, res) => {
+    console.log(req.session.passport);
     res.redirect('/student/dashboard');
   });
 
@@ -57,7 +58,7 @@ router.route('/student/login')
     });
   })
   .put((req, res) => {
-    Student.forge({ email: req.session.passport.user._json.email })
+    Student.forge({ github_id: Number(req.session.passport.user.id) })
     .fetch()
     .then(student => student.save({
       student_id: student.get('student_id'),
@@ -65,6 +66,7 @@ router.route('/student/login')
       email: student.get('email'),
       github_user_name: student.get('github_user_name'),
       photo_url: student.get('photo_url'),
+      github_id: student.get('github_id'),
       username: req.body.username,
       cohort_id: req.body.cohort_id,
     }))
@@ -115,10 +117,9 @@ router.route('/admin/signup')
       confirmed: false,
     })
     .save())
-    .catch((err) => {
-      console.error(err);
-      res.status(400).json({ error: 'User already exists' });
-    })
+    .catch(err =>
+      // console.error(err);
+       res.status(400).json({ error: 'User already exists' }))
     .then((newAdmin) => {
       // save the admin and their cohorts they are apart of to the admin_cohort table
       const cohortsArr = req.body.cohorts;
@@ -131,10 +132,7 @@ router.route('/admin/signup')
       }
       Promise.all(promiseArr);
     })
-    .catch((err) => {
-      console.error(err);
-      res.json({ error: 'Server Error - Please Try Again' });
-    })
+    .catch(err => res.json({ error: 'Server Error - Please Try Again' }))
     .then(() => Admin.query({ where: { email: req.body.email } })
       .fetch())
     .then((admin) => {
@@ -152,7 +150,6 @@ router.route('/admin/signup')
         if (error) {
           return console.log(error);
         }
-        console.log('Message %s sent: %s', info.messageId, info.response);
       });
       // sends the information to the front end for the front end to display for the admin to confirm via email
       res.status(200).json({
@@ -161,7 +158,8 @@ router.route('/admin/signup')
       });
     })
     .catch((err) => {
-      console.error(err);
+      // res.json({ error: 'Server Error - Please Try Again' });
+      // console.error(err);
     });
   });
 

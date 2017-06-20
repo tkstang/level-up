@@ -1,65 +1,26 @@
-import React, { Component } from 'react';
-import { Form, Container, Segment, Button, Loader } from 'semantic-ui-react';
-import { Field, reduxForm } from 'redux-form';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
+import React, { PureComponent } from 'react';
+import { Form, Container, Segment, Button, Loader, Grid } from 'semantic-ui-react';
+import { Field } from 'redux-form';
 import renderIf from 'render-if';
-import { allCampuses, setCampuses } from '../../../../actions/admin-signup';
-import { addChallenge } from '../../../../actions/add-challenge';
-import { renderField, renderTextAreaField, renderSelectField, categories } from '../../admin-common/render-fields';
-import { required, number } from '../../admin-common/validations';
+import { renderField, renderTextAreaField, renderSelectField, categories } from '../../helpers/render-fields';
+import { renderRequirementInputs } from '../../helpers/render-requirements';
+import { required, number } from '../../helpers/validations';
 import './add-challenge-styles.css';
 
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ addChallenge, allCampuses, setCampuses }, dispatch);
-}
-function mapStateToProps(state, ownProps) {
-  return {
-    addChallenge: false,
-    campuses: state.allCampuses,
-  };
-}
-
-
-class AddChallengeForm extends Component {
+class AddChallengeForm extends PureComponent {
   constructor(props) {
     super(props);
     this.state = { numberOfRequestInputs: 1,
       maxRequestInputs: false,
     };
   }
-
-  componentWillMount() {
-    this.props.allCampuses();
-  }
-
   addRequirement() {
-    this.setState((prevState, props) => {
+    this.setState((prevState) => {
       if (prevState.numberOfRequestInputs <= 4) {
         return { numberOfRequestInputs: prevState.numberOfRequestInputs + 1 };
       }
       return { maxRequestInputs: true };
     });
-  }
-
-  renderRequirementInputs(numOfInputs) {
-    const requirementInputComponents = [];
-    for (let i = 1; i <= numOfInputs; i++) {
-      requirementInputComponents.push((
-        <Form.Group>
-          <Form.Field width={16}>
-            <Field
-              name={`requirements_${i}`}
-              component={renderField}
-              type="text"
-              label="Requirement"
-              placeholder="Requirement"
-            />
-          </Form.Field>
-        </Form.Group>
-    ));
-    }
-    return requirementInputComponents;
   }
 
   render() {
@@ -94,8 +55,7 @@ class AddChallengeForm extends Component {
                 />
               </Form.Field>
             </Form.Group>
-
-            {this.renderRequirementInputs(this.state.numberOfRequestInputs)}
+            {renderRequirementInputs(this.state.numberOfRequestInputs)}
             <Form.Group>
               <Form.Field width={4}>
                 {renderIf(this.state.numberOfRequestInputs < 5 && this.state.maxRequestInputs === false)(
@@ -103,7 +63,6 @@ class AddChallengeForm extends Component {
                 )}
               </Form.Field>
             </Form.Group>
-
             <Form.Group>
               <Form.Field width={8}>
                 <Field
@@ -120,7 +79,6 @@ class AddChallengeForm extends Component {
                 </Field>
               </Form.Field>
               <Form.Field width={8}>
-
                 <Field
                   name="category_id"
                   component={renderSelectField}
@@ -146,9 +104,11 @@ class AddChallengeForm extends Component {
                 />
               </Form.Field>
             </Form.Group>
-            <Form.Group>
-              <Form.Button basic color="orange">Submit</Form.Button>
-            </Form.Group>
+            <Grid centered>
+              <Grid.Row>
+                <Form.Button basic color="orange">Submit</Form.Button>
+              </Grid.Row>
+            </Grid>
           </Form>
         </Segment>
       </Container>
@@ -156,4 +116,4 @@ class AddChallengeForm extends Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(reduxForm({ form: 'addChallenge' })(AddChallengeForm));
+export default AddChallengeForm;

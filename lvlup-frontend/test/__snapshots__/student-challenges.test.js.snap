@@ -1,11 +1,40 @@
 exports[`test StudentChallenges should render 1`] = `
-<div>
-  <div
-    className="studentDashboard">
-    <h1>
-      Student Challenges Available
-    </h1>
-    <Connect(StudentChallengesTable) />
-  </div>
-</div>
+<lifecycle(StudentChallengesTable)
+  campusChallenges={[Function]}
+  resetChallenge={[Function]}
+  selectChallenge={[Function]}
+  sortChallengeCategory={[Function]}
+  sortChallengeCategoryReverse={[Function]}
+  sortChallengeName={[Function]}
+  sortChallengeNameReverse={[Function]}
+  sortChallengePoints={[Function]}
+  sortChallengePointsReverse={[Function]}
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+  storeSubscription={
+    Subscription {
+      "listeners": Object {
+        "notify": [Function],
+      },
+      "onStateChange": [Function],
+      "parentSub": undefined,
+      "store": Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      },
+      "unsubscribe": null,
+    }
+  } />
 `;

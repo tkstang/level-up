@@ -1,3 +1,18 @@
+.dash-icon {
+  text-align: center !important;
+  float: none !important;
+  margin-bottom: 10px !important;
+}
+
+h4 {
+  font-family: 'Anaheim', sans-serif !important;
+  font-size: 24px;
+}
+
+.headerStudent{
+  text-align: center;
+}
+
 .studentSidenav {
   position: absolute;
   bottom: 0px;
@@ -10,44 +25,36 @@
   border-right: 1px solid !important;
   border-color: #F2711C !important;
   background-color: #4A4A4A !important;
-}
-
-.userdiv {
-  margin-top: 5px;
+  font-family: 'Anaheim', sans-serif !important;
+  font-size: 16px !important;
   text-align: center;
 }
 
-.headerStudent{
+.signupPage {
+  margin-top: 40px;
+}
+
+.signupText {
   text-align: center;
 }
 
 #student-sidenav-info {
-   margin-top: 30px;
-   margin-bottom: 30px;
-}
-
-.signupPage {
-  margin-left: 210px;
-  margin-top: 40px;
-}
-
-.signupText{
-  text-align: center;
-}
-
-.ui.form select {
-  height: 37px !important;
-}
-  
-.signupPage{
-  margin-left: 210px;
-  margin-top: 40px;
-}
-
-.signupText{
-  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  font-family: 'Anaheim', sans-serif !important;
 }
 
 /*.ui.form select {
   height: 37px !important;
 }*/
+
+.successAdminCohort {
+  padding: 40px;
+  margin-top: 60px !important;
+}
+
+.userdiv {
+  margin-top: 5px;
+  text-align: center;
+  font-family: 'Anaheim', sans-serif !important;
+}

@@ -1,47 +1,40 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Menu } from 'semantic-ui-react';
-import '../Home/homeview.css';
-import { connect } from 'react-redux';
-import LoginGithub from './login-github';
-import LogOutGithub from './logout-student';
-import LogOutAdmin from './logout-admin';
 import renderIf from 'render-if';
 import { Link } from 'react-router-dom';
+import './navbar-styles.css';
+import LoginModal from './login-modal';
+import LogOutGithub from './logout-student-container';
+import LogOutAdmin from './logout-admin-container';
 
-const mapStateToProps = state => ({
-  loggedIn: state.loggedIn,
-  loginInfo: state.loginInfo,
-});
-
-class NavBar extends Component {
-  render() {
-    return (
+const NavBar = props => (
+  <div>
+    {renderIf(!props.studentLoginInfo.status && !props.adminLoginInfo.status)(
       <Menu secondary size="small" className="nav">
         <Menu.Item className="center" header>
-          {renderIf(!this.props.loginInfo.status && !this.props.loggedIn.status)(
-            <Link to={'/'}><div className="hamburger">lvl^</div></Link>,
-          )}
-          {renderIf(this.props.loginInfo.status)(
-            <Link to={'/student/dashboard'}><div className="hamburger">lvl^</div></Link>,
-          )}
-          {renderIf(this.props.loggedIn.status)(
-            <Link to={'/admin/dashboard'}><div className="hamburger">lvl^</div></Link>,
-          )}
+          {renderIf(!props.studentLoginInfo.status && !props.adminLoginInfo.status)(
+            <Link to={'/'}><div className="nav-logo">lvl^</div></Link>,
+      )}
+          {renderIf(props.studentLoginInfo.status)(
+            <Link to={'/student/dashboard'}><div className="nav-logo">lvl^</div></Link>,
+      )}
+          {renderIf(props.adminLoginInfo.status)(
+            <Link to={'/admin/dashboard'}><div className="nav-logo">lvl^</div></Link>,
+      )}
         </Menu.Item>
         <Menu.Item className="right">
-          {renderIf(!this.props.loginInfo.status && !this.props.loggedIn.status)(
-            <LoginGithub />,
-          )}
-          {renderIf(this.props.loginInfo.status)(
+          {renderIf(!props.studentLoginInfo.status && !props.adminLoginInfo.status)(
+            <LoginModal />,
+      )}
+          {renderIf(props.studentLoginInfo.status)(
             <LogOutGithub />,
-          )}
-          {renderIf(this.props.loggedIn.status)(
+      )}
+          {renderIf(props.adminLoginInfo.status)(
             <LogOutAdmin />,
-          )}
+      )}
         </Menu.Item>
-      </Menu>
-    );
-  }
-}
+      </Menu>)}
+  </div>
+);
 
-export default connect(mapStateToProps)(NavBar);
+export default NavBar;

@@ -1,18 +1,13 @@
 import React from 'react';
 import { Label, Table, Button, Grid, Container } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
-
-const mapStateToProps = state => ({
-  editedReward: state.editedReward,
-});
 
 const EditRewardCompleted = props => (
-  <Container className="lvl-table">
-    <Table celled color="orange">
+  <Container>
+    <Table celled selectable color="orange">
       <Table.Header>
         <Table.Row>
-          <Table.HeaderCell textAlign="center">Reward Edit Successful!</Table.HeaderCell>
+          <Table.HeaderCell textAlign="center" className="completed-thead">Reward Edit Successful!</Table.HeaderCell>
         </Table.Row>
       </Table.Header>
       <Table.Body>
@@ -45,4 +40,4 @@ const EditRewardCompleted = props => (
 );
 
 
-export default connect(mapStateToProps)(EditRewardCompleted);
+export default EditRewardCompleted;

@@ -1,7 +1,40 @@
 exports[`test StudentRewards should render 1`] = `
-<div
-  className="studentDashboard">
-  <RewardsHeader />
-  <Connect(RewardsTable) />
-</div>
+<lifecycle(StudentRewardsTable)
+  campusRewards={[Function]}
+  resetRequest={[Function]}
+  selectReward={[Function]}
+  sortRewardCategory={[Function]}
+  sortRewardCategoryReverse={[Function]}
+  sortRewardName={[Function]}
+  sortRewardNameReverse={[Function]}
+  sortRewardPoints={[Function]}
+  sortRewardPointsReverse={[Function]}
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+  storeSubscription={
+    Subscription {
+      "listeners": Object {
+        "notify": [Function],
+      },
+      "onStateChange": [Function],
+      "parentSub": undefined,
+      "store": Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      },
+      "unsubscribe": null,
+    }
+  } />
 `;

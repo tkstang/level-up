@@ -1,22 +1,13 @@
-import React, { Component } from 'react';
-import AddACohortForm from './config-add-cohort-form';
-import { connect } from 'react-redux';
+import React from 'react';
+import AddACohortForm from './add-cohort-form-container';
 import renderIf from 'render-if';
-import AddCohortComplete from './add-cohort-confirmed';
+import AddCohortComplete from './add-cohort-confirmed-container';
 
-const mapStateToProps = state => ({
-  addCohort: state.addedCohort,
-});
+const AddCohortPage = props => (
+  <div>
+    {renderIf(props.addCohort.fulfilled === false)(<AddACohortForm />)}
+    {renderIf(props.addCohort.fulfilled === true)(<AddCohortComplete />)}
+  </div>
+);
 
-class AddCohortPage extends Component {
-  render() {
-    return (
-      <div className="admin-config">
-        {renderIf(this.props.addCohort.fulfilled === false)(<AddACohortForm />)}
-        {renderIf(this.props.addCohort.fulfilled === true)(<AddCohortComplete />)}
-      </div>
-    );
-  }
-}
-
-export default connect(mapStateToProps)(AddCohortPage);
+export default AddCohortPage;

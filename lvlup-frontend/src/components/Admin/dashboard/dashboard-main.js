@@ -1,17 +1,12 @@
-import React, { Component } from 'react';
-import PendingSubmissionsTable from './pending-submissions';
-import PendingRequestsTable from './pending-requests';
+import React from 'react';
+import PendingSubmissionsTable from './submissions-container';
+import PendingRequestsTable from './requests-container';
 
-class AdminHome extends Component {
-  render() {
-    return (
-      <div className="lvl-table">
-        <PendingSubmissionsTable />
-        <PendingRequestsTable />
-      </div>
-
-    );
-  }
-}
+const AdminHome = () => (
+  <div id="admin-dash">
+    <PendingSubmissionsTable />
+    <PendingRequestsTable />
+  </div>
+);
 
 export default AdminHome;

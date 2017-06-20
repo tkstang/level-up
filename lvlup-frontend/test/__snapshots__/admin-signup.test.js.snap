@@ -1,6 +1,8 @@
 exports[`test adminsignup should render 1`] = `
-<div
-  className="signup">
-  <Connect(ReduxForm) />
+<div>
+  <div
+    className="signup">
+    <Connect(lifecycle(ReduxForm)) />
+  </div>
 </div>
 `;

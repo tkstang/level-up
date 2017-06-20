@@ -1,0 +1,13 @@
+.nav-logo {
+  font-family: 'Anaheim', sans-serif !important;
+  color: #F2711C !important;
+  font-size: 20px;
+}
+
+.nav-logo:hover {
+  cursor: pointer;
+}
+
+.login-button {
+  font-size: 16px;
+}

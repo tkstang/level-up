@@ -1,7 +1,43 @@
 exports[`test AdminRewards should render 1`] = `
-<div
-  className="lvl-table">
-  <RewardsHeader />
-  <Connect(RewardsTable) />
-</div>
+<lifecycle(RewardsTable)
+  campusRewards={[Function]}
+  makeRewardInactive={[Function]}
+  resetAddReward={[Function]}
+  resetEditReward={[Function]}
+  resetRewardsList={[Function]}
+  selectReward={[Function]}
+  sortRewardCategory={[Function]}
+  sortRewardCategoryReverse={[Function]}
+  sortRewardName={[Function]}
+  sortRewardNameReverse={[Function]}
+  sortRewardPoints={[Function]}
+  sortRewardPointsReverse={[Function]}
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+  storeSubscription={
+    Subscription {
+      "listeners": Object {
+        "notify": [Function],
+      },
+      "onStateChange": [Function],
+      "parentSub": undefined,
+      "store": Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      },
+      "unsubscribe": null,
+    }
+  } />
 `;

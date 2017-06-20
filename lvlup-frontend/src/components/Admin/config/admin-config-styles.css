@@ -1,13 +1,9 @@
 .admin-config {
   text-align: center;
   float: right;
-  margin-left: 210px;
-  margin-top: 40px;
 }
 
 .addACohort {
-  margin-left: 210px;
-  margin-top: 40px;
 }
 
 .addCohortHeader {
@@ -15,5 +11,9 @@
 }
 
 .configButton {
-  margin-left: 210px;
+}
+
+.cohortOptions {
+  /*height: 200px;*/
+  padding: 60px !important;
 }

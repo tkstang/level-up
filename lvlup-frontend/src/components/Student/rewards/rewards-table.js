@@ -1,73 +1,61 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import { Link } from 'react-router-dom';
-import { Icon, Table, Container, Loader } from 'semantic-ui-react';
-import { campusRewards, selectReward, resetRequest } from '../../../actions/student-rewards-actions';
+import React from 'react';
+import { Table, Loader, Dropdown } from 'semantic-ui-react';
+import renderRewards from '../helpers/render-rewards';
 
-const mapStateToProps = state => ({
-  lvlUpInfo: state.studentPointsAndCampus,
-  rewards: state.rewards,
-});
-
-const mapDispatchToProps = dispatch => bindActionCreators({ campusRewards, resetRequest, selectReward }, dispatch);
-
-
-class RewardsTable extends Component {
-  constructor(props) {
-    super(props);
-    this.renderRewards = this.renderRewards.bind(this);
+const StudentRewardsTable = (props) => {
+  if (props.rewards.rewards.length === 0) {
+    return <Loader active inline="centered"> Loading </Loader>;
   }
+  return (
+    <div className="lvl-table">
+      <Table celled selectable color="orange">
+        <Table.Header>
+          <Table.Row>
+            <Table.HeaderCell textAlign="center" colSpan="5" className="thead-sortable">Rewards
+                <Dropdown text="Sort" className="sort">
+                  <Dropdown.Menu>
+                    <Dropdown.Item
+                      text="by Title Ascending"
+                      onClick={() => props.sortRewardName()}
+                    />
+                    <Dropdown.Item
+                      text="by Title Descending"
+                      onClick={() => props.sortRewardNameReverse()}
+                    />
+                    <Dropdown.Item
+                      text="by Category Ascending"
+                      onClick={() => props.sortRewardCategory()}
+                    />
+                    <Dropdown.Item
+                      text="by Category Descending"
+                      onClick={() => props.sortRewardCategoryReverse()}
+                    />
+                    <Dropdown.Item
+                      text="by Points Ascending"
+                      onClick={() => props.sortRewardPoints()}
+                    />
+                    <Dropdown.Item
+                      text="by Points Descending"
+                      onClick={() => props.sortRewardPointsReverse()}
+                    />
+                  </Dropdown.Menu>
+                </Dropdown>
+            </Table.HeaderCell>
+          </Table.Row>
+          <Table.Row>
+            <Table.HeaderCell className="thead-secondary">Title</Table.HeaderCell>
+            <Table.HeaderCell className="thead-secondary">Category</Table.HeaderCell>
+            <Table.HeaderCell className="thead-secondary">Description</Table.HeaderCell>
+            <Table.HeaderCell className="thead-secondary" textAlign="center">Points</Table.HeaderCell>
+            <Table.HeaderCell className="thead-secondary" textAlign="center">Request</Table.HeaderCell>
+          </Table.Row>
+        </Table.Header>
+        <Table.Body>
+          {renderRewards(props)}
+        </Table.Body>
+      </Table>
+    </div>
+  );
+};
 
-  componentWillMount() {
-    this.props.campusRewards(this.props.lvlUpInfo.campusId);
-    this.props.resetRequest();
-  }
-
-  renderRewards(list) {
-    return list.filter(reward => reward.active === 'Active').map(item => (
-      <Table.Row key={`${item.id}rewards-table-student`}>
-        <Table.Cell>{item.name}</Table.Cell>
-        <Table.Cell>{item.category.category}</Table.Cell>
-        <Table.Cell>{item.description}</Table.Cell>
-        <Table.Cell textAlign="center">{item.point_cost}</Table.Cell>
-        <Table.Cell textAlign="center">
-          <Link to={`/student/reward-request/${item.id}`}>
-            <Icon color="orange" onClick={() => this.props.selectReward(item)} name="long arrow right" />
-          </Link>
-        </Table.Cell>
-      </Table.Row>
-  ));
-  }
-
-  render() {
-    if (this.props.rewards.rewards.length === 0) {
-      return <Loader active inline="centered"> Loading </Loader>;
-    }
-    return (
-      <Container>
-        <Table celled color="orange">
-          <Table.Header>
-            <Table.Row>
-              <Table.HeaderCell textAlign="center" colSpan="5">Rewards</Table.HeaderCell>
-            </Table.Row>
-            <Table.Row>
-              <Table.HeaderCell>Title</Table.HeaderCell>
-              <Table.HeaderCell>Category</Table.HeaderCell>
-              <Table.HeaderCell>Description</Table.HeaderCell>
-              <Table.HeaderCell textAlign="center">Points</Table.HeaderCell>
-              <Table.HeaderCell textAlign="center">Request</Table.HeaderCell>
-            </Table.Row>
-          </Table.Header>
-
-          <Table.Body>
-            {this.renderRewards(this.props.rewards.rewards)}
-          </Table.Body>
-
-        </Table>
-      </Container>
-    );
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(RewardsTable);
+export default StudentRewardsTable;
