@@ -1,6 +1,5 @@
 exports[`test EditChallengeApproved should render 1`] = `
-<Container
-  className="lvl-table">
+<Container>
   <Table
     as="table"
     celled={true}
@@ -43,6 +42,30 @@ exports[`test EditChallengeApproved should render 1`] = `
             Point Value
           </Label>
           5
+        </TableCell>
+      </TableRow>
+      <TableRow
+        as="tr"
+        cellAs="td">
+        <TableCell
+          as="td">
+          <Label
+            ribbon={true}>
+            Description
+          </Label>
+          Feed your favorite instructor with the evil laugh
+        </TableCell>
+      </TableRow>
+      <TableRow
+        as="tr"
+        cellAs="td">
+        <TableCell
+          as="td">
+          <Label
+            ribbon={true}>
+            Requirements
+          </Label>
+          No requirements!
         </TableCell>
       </TableRow>
       <TableRow

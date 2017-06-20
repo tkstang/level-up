@@ -1,6 +1,5 @@
 exports[`test EditRewardCompleted should render 1`] = `
-<Container
-  className="lvl-table">
+<Container>
   <Table
     as="table"
     celled={true}

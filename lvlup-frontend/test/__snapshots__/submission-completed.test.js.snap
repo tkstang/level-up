@@ -1,6 +1,5 @@
 exports[`test SubmissionCompleted should render 1`] = `
-<div
-  className="lvl-table">
+<div>
   <Table
     as="table"
     celled={true}

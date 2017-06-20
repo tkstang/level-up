@@ -26,6 +26,7 @@ exports[`test AdminSidenav should render 1`] = `
       <Icon
         as="i"
         className="dash-icon"
+        color="orange"
         name="dashboard" />
       <br />
       Dashboard
@@ -37,6 +38,8 @@ exports[`test AdminSidenav should render 1`] = `
     <MenuItem>
       <Icon
         as="i"
+        className="dash-icon"
+        color="orange"
         name="chevron up" />
       <br />
       Challenges
@@ -48,6 +51,8 @@ exports[`test AdminSidenav should render 1`] = `
     <MenuItem>
       <Icon
         as="i"
+        className="dash-icon"
+        color="orange"
         name="gift" />
       <br />
       Rewards
@@ -59,9 +64,25 @@ exports[`test AdminSidenav should render 1`] = `
     <MenuItem>
       <Icon
         as="i"
+        className="dash-icon"
+        color="orange"
         name="setting" />
       <br />
       Configuration
+    </MenuItem>
+  </Link>
+  <Link
+    replace={false}
+    to="/">
+    <MenuItem
+      onClick={[Function]}>
+      <Icon
+        as="i"
+        className="dash-icon"
+        color="orange"
+        name="sign out" />
+      <br />
+      Log Out
     </MenuItem>
   </Link>
 </Menu>
