@@ -1,6 +1,6 @@
 import React from 'react';
 import { Form, Container, Segment, Loader, Grid } from 'semantic-ui-react';
-import { Field, reduxForm } from 'redux-form';
+import { Field } from 'redux-form';
 import { renderField, renderTextAreaField, renderSelectField, categories } from '../../helpers/render-fields';
 import { required, number } from '../../helpers/validations';
 import './edit-reward-styles.css';

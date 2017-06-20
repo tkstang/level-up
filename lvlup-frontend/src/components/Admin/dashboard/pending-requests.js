@@ -1,5 +1,5 @@
 import React from 'react';
-import { Table, Container, Loader, Dropdown } from 'semantic-ui-react';
+import { Table, Loader, Dropdown } from 'semantic-ui-react';
 import renderPendingRequests from '../helpers/render-pending-requests';
 import './dashboard-styles.css';
 

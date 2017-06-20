@@ -78,11 +78,12 @@ export const requestedReward = (state = { fulfilled: false }, action) => {
   }
 };
 
-export const requests = (state = { requests: [] }, action) => {
+export const requests = (state = { requests: [], fetched: false }, action) => {
   switch (action.type) {
     case CONST.REQUESTS_FULFILLED:
       return Object.assign({}, state, {
-        requests: state.requests.concat(action.payload),
+        requests: action.payload,
+        fetched: true,
       });
     case CONST.REQUESTS_REJECTED:
       return Object.assign({}, { error: 'Server Error - Please Try Again' }, state);
@@ -91,7 +92,7 @@ export const requests = (state = { requests: [] }, action) => {
     case CONST.SORT_REQUESTS_REV_CHRONO:
       return { ...state, requests: quickSort(state.requests) };
     case CONST.SORT_REWARDS_ASC:
-      return { ...state, requests: insertionSortPointsReward(state.requests) };
+      return { ...state, requests: [...insertionSortPointsReward(state.requests)] };
     case CONST.SORT_REWARDS_DESC:
       return { ...state, requests: reverse(insertionSortPointsReward(state.requests)) };
     case CONST.SORT_REWARDS_CHRONO:
@@ -107,7 +108,7 @@ export const rewards = (state = { rewards: [], fetched: false }, action) => {
   switch (action.type) {
     case CONST.REWARDS_CAMPUS_FULFILLED:
       return Object.assign({}, state, {
-        rewards: state.rewards.concat(action.payload),
+        rewards: action.payload,
         fetched: true,
       });
     case CONST.RESET_AFTER_ADDED_REWARD_FULFILLED:

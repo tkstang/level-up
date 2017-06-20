@@ -25,7 +25,7 @@ const StudentDashboard = (props) => {
   return (
     <div className="lvl-table">
       <h1 className="headerStudent">{`Welcome, ${getFirstName(props.studentLoginInfo.name)}!`}</h1>
-      <AchievementsCarousel />
+      { props.submissions.submissions.length > 0 ? <AchievementsCarousel /> : null}
       <Table celled selectable id="points-table">
         <Table.Header>
           <Table.Row>

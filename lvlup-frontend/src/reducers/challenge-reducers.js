@@ -23,7 +23,7 @@ export const challenges = (state = { challenges: [], fetched: false }, action) =
   switch (action.type) {
     case CONST.CHALLENGES_CAMPUS_FULFILLED:
       return Object.assign({}, state, {
-        challenges: state.challenges.concat(action.payload),
+        challenges: action.payload,
         fetched: true,
       });
     case CONST.RESET_AFTER_ADDED_CHALLENGE_FULFILLED:
@@ -104,11 +104,12 @@ export const selectedChallenge = (state = {}, action) => {
   }
 };
 
-export const submissions = (state = { submissions: [] }, action) => {
+export const submissions = (state = { submissions: [], fetched: false }, action) => {
   switch (action.type) {
     case CONST.SUBMISSIONS_FULFILLED:
       return Object.assign({}, state, {
-        submissions: state.submissions.concat(action.payload),
+        submissions: action.payload,
+        fetched: true,
       });
     case CONST.SUBMISSIONS_REJECTED:
       return Object.assign({}, { error: 'Server Error - Please Try Again' }, state);
@@ -117,7 +118,7 @@ export const submissions = (state = { submissions: [] }, action) => {
     case CONST.SORT_SUBMISSIONS_REV_CHRONO:
       return { ...state, submissions: reverse(quickSort(state.submissions)) };
     case CONST.SORT_SUBMISSIONS_ASC:
-      return { ...state, submissions: insertionSortPointsChal(state.submissions) };
+      return { ...state, submissions: [...insertionSortPointsChal(state.submissions)] };
     case CONST.SORT_SUBMISSIONS_DESC:
       return { ...state, submissions: reverse(insertionSortPointsChal(state.submissions)) };
     default:

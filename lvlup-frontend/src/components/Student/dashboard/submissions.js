@@ -3,7 +3,7 @@ import { Table, Loader, Dropdown } from 'semantic-ui-react';
 import renderSubmissions from '../helpers/render-submissions';
 
 const Submissions = (props) => {
-  if (props.submissions.length === 0) {
+  if (props.submissions.fetched === false) {
     return <Loader active inline="centered"> Loading </Loader>;
   }
   return (

@@ -8,7 +8,7 @@ const getLocation = (campusId, campuses) => {
 };
 
 const AddChallengeCompleted = props => (
-  <Container className="lvl-table">
+  <Container>
     <Table celled selectable color="orange">
       <Table.Header>
         <Table.Row>
