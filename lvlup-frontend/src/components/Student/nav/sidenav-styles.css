@@ -5,8 +5,9 @@
 }
 
 h4 {
-  font-family: 'Anaheim', sans-serif !important;
+  font-family: 'Anaheim', sans-serif;
   font-size: 24px;
+  color: #F2711C;
 }
 
 .headerStudent{
@@ -57,4 +58,9 @@ h4 {
   margin-top: 5px;
   text-align: center;
   font-family: 'Anaheim', sans-serif !important;
+}
+
+.coverflow__cover__25-7e {
+  border: 1px solid !important;
+  border-color: #F2711C !important;
 }
