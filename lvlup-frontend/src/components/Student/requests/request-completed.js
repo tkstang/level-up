@@ -3,7 +3,7 @@ import { Label, Table, Button } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
 const RequestCompleted = props => (
-  <div className="lvl-table">
+  <div>
     <Table celled selectable color="orange">
       <Table.Header>
         <Table.Row>

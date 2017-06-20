@@ -2,11 +2,13 @@ import { loggingInAction, moreStudentInfo, submissionsAction, requestsAction } f
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { compose, lifecycle } from 'recompose';
+import { loggingOutStudent } from '../../../actions/navbar';
 import StudentSidenav from './sidenav.js';
 
 const mapDispatchToProps = dispatch => bindActionCreators({
   loggingInAction,
   moreStudentInfo,
+  loggingOutStudent,
   submissionsAction,
   requestsAction }, dispatch);
 

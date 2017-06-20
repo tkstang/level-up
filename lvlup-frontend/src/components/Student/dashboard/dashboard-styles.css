@@ -1,5 +1,7 @@
 .headerStudent{
   text-align: center;
+  font-family: 'Nova Square', sans-serif !important;
+  font-size: 36px;
 }
 
 .carousel-card {
@@ -9,13 +11,13 @@
 
 #points-table {
   margin-top: 60px;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 
 #submissions-table {
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 
 #rewards-table {
-  margin-bottom: 20px;
+  margin-bottom: 0px;
 }
