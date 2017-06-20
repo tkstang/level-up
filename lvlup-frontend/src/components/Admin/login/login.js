@@ -1,5 +1,5 @@
 import React from 'react';
-import LoginForm from './signin-form-container';
+import LoginForm from './login-form-container';
 import { Link, Redirect } from 'react-router-dom';
 import renderIf from 'render-if';
 import AdminConfirmMessage from './confirm-admin-message';
