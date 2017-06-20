@@ -17,7 +17,7 @@ class LoginModal extends Component {
   render() {
     return (
       <Modal
-        trigger={<Button color="orange" inverted onClick={this.handleOpen}>Start &nbsp;lvling^</Button>}
+        trigger={<Button className="login-button" color="orange" inverted onClick={this.handleOpen}>Start &nbsp;lvling^</Button>}
         open={this.state.modalOpen}
         onClose={this.handleClose}
         >

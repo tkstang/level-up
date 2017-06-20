@@ -3,7 +3,7 @@ import { Label, Table, Button, Container, Grid } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
 const AddRewardCompleted = props => (
-  <Container className="lvl-table">
+  <Container>
     <Table celled selectable color="orange">
       <Table.Header>
         <Table.Row>

@@ -3,7 +3,7 @@ import { Table, Button, Label } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
 const SubmissionCompleted = props => (
-  <div className="lvl-table">
+  <div>
     <Table celled selectable>
       <Table.Header>
         <Table.Row>

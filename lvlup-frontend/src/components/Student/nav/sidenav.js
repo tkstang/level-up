@@ -18,10 +18,10 @@ const StudentSidenav = (props) => {
           <p>{props.studentPointsAndCampus.cohort ? `${props.studentPointsAndCampus.cohort}  ${props.studentPointsAndCampus.cohortType} -  ${props.studentPointsAndCampus.location}` : null}</p>
         </div>
       </Menu.Item>
-      <Link to={'/student/dashboard'}><Menu.Item><Icon className="dash-icon" name="dashboard" /><br />Dashboard</Menu.Item></Link>
-      <Link to={'/student/challenges'}><Menu.Item><Icon className="dash-icon" name="chevron up" /><br />Challenges</Menu.Item></Link>
-      <Link to={'/student/rewards'}><Menu.Item><Icon className="dash-icon" name="gift" /><br />Rewards</Menu.Item></Link>
-      <Link to={'/'}><Menu.Item onClick={() => props.loggingOutStudent()}><Icon className="dash-icon" name="gift" /><br />Log Out</Menu.Item></Link>
+      <Link to={'/student/dashboard'}><Menu.Item><Icon color="orange" className="dash-icon" name="dashboard" /><br />Dashboard</Menu.Item></Link>
+      <Link to={'/student/challenges'}><Menu.Item><Icon color="orange" className="dash-icon" name="chevron up" /><br />Challenges</Menu.Item></Link>
+      <Link to={'/student/rewards'}><Menu.Item><Icon color="orange" className="dash-icon" name="gift" /><br />Rewards</Menu.Item></Link>
+      <Link to={'/'}><Menu.Item onClick={() => props.loggingOutStudent()}><Icon color="orange" className="dash-icon" name="sign out" /><br />Log Out</Menu.Item></Link>
     </Menu>
   );
 };

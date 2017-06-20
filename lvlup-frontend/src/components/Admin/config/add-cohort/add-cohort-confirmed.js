@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 
 const AddCohortComplete = props => (
-  <div className="lvl-table">
+  <div>
     <Table celled selectable>
       <Table.Header>
         <Table.Row>
