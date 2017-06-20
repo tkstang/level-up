@@ -110,6 +110,10 @@ h2 {
   padding-bottom: 0px !important;
 }
 
+.point-header {
+  font-size: 16px !important;
+}
+
 .sort {
   float: left !important;
   font-size: 12px !important;
