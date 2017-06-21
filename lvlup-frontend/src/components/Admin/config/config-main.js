@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Button, Container, Segment } from 'semantic-ui-react';
+import { Button, Container, Grid, Segment } from 'semantic-ui-react';
 import './admin-config-styles.css';
 
 const AdminConfiguration = () => (

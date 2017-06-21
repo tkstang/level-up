@@ -1,6 +1,8 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { compose, lifecycle } from 'recompose';
 import Submissions from './submissions';
+import { submissionsAction } from '../../../actions/student-dash-actions';
 import {
   sortSubmissionsAsc,
   sortSubmissionsDesc,
@@ -12,14 +14,26 @@ import {
 
 
 const mapStateToProps = state => ({
+  studentLoginInfo: state.studentLoginInfo,
   submissions: state.submissions.submissions,
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
+  submissionsAction,
   sortSubmissionsAsc,
   sortSubmissionsDesc,
   sortSubmissionsChrono,
   sortSubmissionsRevChrono,
 }, dispatch);
 
-export default connect(mapStateToProps, mapDispatchToProps)(Submissions);
+const connectToStore = connect(mapStateToProps, mapDispatchToProps);
+
+const onDidMount = lifecycle({
+  componentDidMount() {
+    if (this.props.studentLoginInfo.id) {
+      this.props.submissionsAction(this.props.studentLoginInfo.id);
+    }
+  },
+});
+
+export default compose(connectToStore, onDidMount)(Submissions);
