@@ -1,6 +1,6 @@
 exports[`test EditReward should render 1`] = `
 <div
   className="edit-reward">
-  <Connect(EditRewardCompleted) />
+  <Connect(lifecycle(EditRewardCompleted)) />
 </div>
 `;

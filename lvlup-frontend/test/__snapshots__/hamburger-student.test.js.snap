@@ -30,7 +30,10 @@ exports[`test StudentSidenav should render 1`] = `
     <MenuItem>
       <Icon
         as="i"
+        className="dash-icon"
+        color="orange"
         name="dashboard" />
+      <br />
       Dashboard
     </MenuItem>
   </Link>
@@ -40,7 +43,10 @@ exports[`test StudentSidenav should render 1`] = `
     <MenuItem>
       <Icon
         as="i"
+        className="dash-icon"
+        color="orange"
         name="chevron up" />
+      <br />
       Challenges
     </MenuItem>
   </Link>
@@ -50,8 +56,25 @@ exports[`test StudentSidenav should render 1`] = `
     <MenuItem>
       <Icon
         as="i"
+        className="dash-icon"
+        color="orange"
         name="gift" />
+      <br />
       Rewards
+    </MenuItem>
+  </Link>
+  <Link
+    replace={false}
+    to="/">
+    <MenuItem
+      onClick={[Function]}>
+      <Icon
+        as="i"
+        className="dash-icon"
+        color="orange"
+        name="sign out" />
+      <br />
+      Log Out
     </MenuItem>
   </Link>
 </Menu>
