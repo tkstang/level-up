@@ -4,7 +4,7 @@ import renderPendingRequests from '../helpers/render-pending-requests';
 import './dashboard-styles.css';
 
 const PendingRequestsTable = (props) => {
-  if (props.pendingRequests.requestsAdmin.length === 0) {
+  if (props.pendingRequests.fetched === false) {
     return <Loader active inline="centered"> Loading </Loader>;
   }
   return (

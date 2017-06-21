@@ -34,11 +34,12 @@ export const addAdminCohort = (state = { fulfilled: false }, action) => {
 };
 
 
-export const adminPendingSubmissions = (state = { submissionsAdmin: [] }, action) => {
+export const adminPendingSubmissions = (state = { submissionsAdmin: [], fetched: false }, action) => {
   switch (action.type) {
     case CONST.ADMIN_SUBMISSIONS_FULFILLED:
       return Object.assign({}, state, {
         submissionsAdmin: state.submissionsAdmin.concat(action.payload),
+        fetched: true,
       });
     case CONST.ADMIN_SUBMISSIONS_REJECTED:
       return Object.assign({}, state, { error: 'Server Error - Please Try Again' });
@@ -57,11 +58,12 @@ export const adminPendingSubmissions = (state = { submissionsAdmin: [] }, action
   }
 };
 
-export const adminPendingRequests = (state = { requestsAdmin: [] }, action) => {
+export const adminPendingRequests = (state = { requestsAdmin: [], fetched: false }, action) => {
   switch (action.type) {
     case CONST.ADMIN_REQUESTS_FULFILLED:
       return Object.assign({}, state, {
         requestsAdmin: state.requestsAdmin.concat(action.payload),
+        fetched: true,
       });
     case CONST.ADMIN_REQUESTS_REJECTED:
       return Object.assign({}, state, { error: 'Server Error - Please Try Again' });
