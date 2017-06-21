@@ -1,6 +1,18 @@
 exports[`test Footer should render 1`] = `
 <div
   className="footer">
-  Contact Us     ||   Enter   ||    To the Top   
+  ||    
+  <a
+    href="mailto:lvlupteam@lvlup.tech">
+    Contact Us
+  </a>
+      ||     
+  <FooterLogin />
+       ||    
+  <a
+    href="#">
+    To the Top
+  </a>
+      ||   
 </div>
 `;

@@ -11,7 +11,7 @@ const AdminSidenav = (props) => {
   }
   return (
     <Menu inverted vertical className="adminSidenav">
-      <Menu.Item id="admin-sidenav-info"><Image src={props.adminLoginInfo.gravatar_url ? props.adminLoginInfo.gravatar_url : 'https://ucarecdn.com/d50ece0e-f5e1-47fd-a492-d8561fe02ebb/'} shape="circular" size="tiny" alt={props.adminLoginInfo.name} centered />
+      <Menu.Item id="admin-sidenav-info"><Image id="admin-avatar" src={props.adminLoginInfo.gravatar_url ? props.adminLoginInfo.gravatar_url : 'https://ucarecdn.com/d50ece0e-f5e1-47fd-a492-d8561fe02ebb/'} shape="circular" size="tiny" alt={props.adminLoginInfo.name} centered />
         <div className="userdiv">
           <h4>{props.adminLoginInfo.username}</h4>
         </div>
