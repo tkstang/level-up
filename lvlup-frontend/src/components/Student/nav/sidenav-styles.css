@@ -14,6 +14,11 @@ h4 {
   text-align: center;
 }
 
+#student-avatar {
+  border: solid 1px !important;
+  border-color: #F2711C !important;
+}
+
 .studentSidenav {
   position: absolute;
   bottom: 0px;

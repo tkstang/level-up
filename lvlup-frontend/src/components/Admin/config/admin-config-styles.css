@@ -3,11 +3,24 @@
   float: right;
 }
 
+#add-cohort-form {
+  width: 30%;
+  margin-left: 35%;
+  margin-right: 35%;
+}
+
 .addACohort {
+  padding: 30px 0px 0px;
+  width: 100%;
 }
 
 .addCohortHeader {
   text-align: center;
+  font-size: 42px;
+  margin-bottom: 50px;
+  /*color: #999999;*/
+  /*color: #F2712C;*/
+  /*text-shadow: 1px 1px #000000;*/
 }
 
 .configButton {
