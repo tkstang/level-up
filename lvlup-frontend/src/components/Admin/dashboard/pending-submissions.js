@@ -4,7 +4,7 @@ import './dashboard-styles.css';
 import renderPendingSubmissions from '../helpers/render-pending-submissions';
 
 const PendingSubmissionsTable = (props) => {
-  if (props.pendingSubmissions.submissionsAdmin.length === 0) {
+  if (props.pendingSubmissions.fetched === false) {
     return <Loader active inline="centered"> Loading </Loader>;
   }
   return (
