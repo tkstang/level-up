@@ -1,6 +1,6 @@
 import React from 'react';
-import { Table, Button, Label } from 'semantic-ui-react';
-import { Link, Grid } from 'react-router-dom';
+import { Table, Button, Label, Grid } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
 
 const SubmissionCompleted = props => (
   <div id="submission-completed">
