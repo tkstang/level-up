@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Segment, Container, Loader } from 'semantic-ui-react';
+import { Form, Segment, Container, Loader, Grid } from 'semantic-ui-react';
 import { Field } from 'redux-form';
 import { required, minValue7 } from '../../Admin/helpers/validations';
 import './submission-styles.css';
@@ -98,7 +98,11 @@ const ChallengeSubmissionForm = ({ studentLoginInfo, selectedChallenge, challeng
               <div>
                 <input type="text" name="submission_image_link_3" role={upload} />
               </div>
-              <Form.Button basic color="orange" floated="right">lvl^</Form.Button>
+              <Grid centered>
+                <Grid.Row>
+                  <Form.Button basic color="orange" floated="right">lvl^</Form.Button>
+                </Grid.Row>
+              </Grid>
             </Form>
           </Segment>
         </div>

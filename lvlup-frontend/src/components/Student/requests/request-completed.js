@@ -1,9 +1,9 @@
 import React from 'react';
 import { Label, Table, Button } from 'semantic-ui-react';
-import { Link } from 'react-router-dom';
+import { Link, Grid } from 'react-router-dom';
 
 const RequestCompleted = props => (
-  <div>
+  <div id="request-completed">
     <Table celled selectable color="orange">
       <Table.Header>
         <Table.Row>
@@ -26,9 +26,13 @@ const RequestCompleted = props => (
           </Table.Row> : null}
       </Table.Body>
     </Table>
-    <Link to={'/student/rewards'}>
-      <Button basic color="orange">Back to Rewards</Button>
-    </Link>
+    <Grid centered>
+      <Grid.Row>
+        <Link to={'/student/rewards'}>
+          <Button basic color="orange">Back to Rewards</Button>
+        </Link>
+      </Grid.Row>
+    </Grid>
   </div>
 );
 

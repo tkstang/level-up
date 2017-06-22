@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Loader } from 'semantic-ui-react';
+import { Form, Loader, Grid } from 'semantic-ui-react';
 import { Field } from 'redux-form';
 import { renderTextAreaField } from '../../Admin/helpers/render-fields';
 
@@ -26,7 +26,11 @@ const RewardRequestForm = ({ studentLoginInfo, reward, rewardRequest, handleSubm
             placeholder="Enter any preferences for your reward.."
           />
         </Form.Field>
-        <Form.Button basic color="orange">lvl^</Form.Button>
+        <Grid centered>
+          <Grid.Row>
+            <Form.Button basic color="orange">lvl^</Form.Button>
+          </Grid.Row>
+        </Grid>
       </Form>
     </div>
   );
