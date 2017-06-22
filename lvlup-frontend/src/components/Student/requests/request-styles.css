@@ -5,3 +5,7 @@
 .insufficient-points {
   padding: 40px;
 }
+
+#request-completed {
+  margin-top: 40px;
+}
